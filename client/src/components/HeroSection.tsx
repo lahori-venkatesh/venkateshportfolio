@@ -95,7 +95,7 @@ export default function HeroSection() {
             <img
               src="https://images.unsplash.com/photo-1573496799515-eebbb63814f2"
               alt="Venkatesh"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-full"
             />
 
             {/* Overlay on hover */}
