@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { FileText } from "lucide-react";
+import { SiLeetcode } from "react-icons/si";
 import Typewriter from 'typewriter-effect';
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16">
+    <section className="min-h-screen flex items-center justify-center pt-16 mt-8 md:mt-0">
       <div className="container px-4 flex flex-col-reverse lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,10 +39,17 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
             <Button size="lg" className="gap-2">
               <FileText className="h-5 w-5" />
               View Resume
+            </Button>
+            <Button size="lg" variant="outline" className="gap-2" asChild>
+              <a href="https://leetcode.com" target="_blank" rel="noopener noreferrer">
+                <SiLeetcode className="h-5 w-5" />
+                LeetCode
+              </a>
             </Button>
           </motion.div>
         </motion.div>
@@ -97,39 +105,7 @@ export default function HeroSection() {
               alt="Venkatesh"
               className="w-full h-full object-cover rounded-full"
             />
-
-            {/* Overlay on hover */}
-            <motion.div
-              className="absolute inset-0 bg-primary/10 opacity-0 transition-opacity duration-300"
-              whileHover={{ opacity: 1 }}
-            />
           </motion.div>
-
-          {/* Floating dots decoration */}
-          <motion.div
-            className="absolute -right-4 top-1/4 w-2 h-2 bg-primary rounded-full"
-            animate={{
-              y: [-10, 10, -10],
-              opacity: [0.5, 1, 0.5],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute -left-4 bottom-1/4 w-3 h-3 bg-primary/50 rounded-full"
-            animate={{
-              y: [10, -10, 10],
-              opacity: [0.3, 0.7, 0.3],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
         </motion.div>
       </div>
     </section>

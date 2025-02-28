@@ -11,3 +11,14 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 }
+
+/* Hide scrollbar while maintaining scroll functionality */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
