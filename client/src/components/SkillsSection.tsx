@@ -50,14 +50,19 @@ export default function SkillsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+              className="transform transition-all duration-300"
             >
-              <Card>
+              <Card className="overflow-hidden border-2 hover:border-primary/50 transition-colors">
                 <CardContent className="p-6">
-                  <div className="mb-4 text-primary">{skill.icon}</div>
+                  <div className="mb-4 text-primary bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center">
+                    {skill.icon}
+                  </div>
                   <h3 className="text-lg font-semibold mb-3">{skill.title}</h3>
                   <ul className="space-y-2">
                     {skill.items.map((item) => (
-                      <li key={item} className="text-muted-foreground">
+                      <li key={item} className="text-muted-foreground flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary/50" />
                         {item}
                       </li>
                     ))}
