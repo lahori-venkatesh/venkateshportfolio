@@ -83,13 +83,14 @@ export default function ProjectsSection() {
               className="transform transition-all duration-300"
             >
               <Card className="overflow-hidden border-2 hover:border-primary/50 transition-colors h-full flex flex-col">
-                <div className="relative group">
+                <div className="relative">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                  {/* Desktop hover buttons */}
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity items-center justify-center gap-4 hidden md:flex">
                     <Button size="sm" variant="secondary" asChild>
                       <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                         <ExternalLink className="h-4 w-4" />
@@ -99,6 +100,19 @@ export default function ProjectsSection() {
                     <Button size="sm" variant="secondary" asChild>
                       <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                         <Github className="h-4 w-4" />
+                        Code
+                      </a>
+                    </Button>
+                  </div>
+                  {/* Mobile buttons */}
+                  <div className="md:hidden flex gap-2 p-2 bg-background/80 backdrop-blur-sm">
+                    <Button size="sm" variant="secondary" className="flex-1" asChild>
+                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                        View
+                      </a>
+                    </Button>
+                    <Button size="sm" variant="secondary" className="flex-1" asChild>
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
                         Code
                       </a>
                     </Button>
