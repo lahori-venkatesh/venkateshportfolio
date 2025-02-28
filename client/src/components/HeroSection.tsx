@@ -6,17 +6,17 @@ import Typewriter from 'typewriter-effect';
 export default function HeroSection() {
   return (
     <section className="min-h-screen flex items-center justify-center pt-16">
-      <div className="container px-4 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container px-4 flex flex-col-reverse lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center lg:text-left"
+          className="text-center lg:text-left mt-8 lg:mt-0"
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             Hi, I'm <span className="text-primary">Venkatesh</span>
           </h1>
-          <div className="text-xl sm:text-2xl text-muted-foreground mb-8 h-12">
+          <div className="text-xl sm:text-2xl text-muted-foreground mb-6 h-16 flex items-center justify-center lg:justify-start">
             <Typewriter
               options={{
                 strings: [
@@ -50,7 +50,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative aspect-square max-w-md mx-auto"
+          className="relative aspect-square max-w-[280px] sm:max-w-md w-full mx-auto"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-full animate-pulse" />
           <img
