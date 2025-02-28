@@ -87,41 +87,13 @@ export default function ProjectsSection() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-48 object-cover"
                   />
-                  {/* Desktop hover buttons */}
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity items-center justify-center gap-4 hidden md:flex">
-                    <Button size="sm" variant="secondary" asChild>
-                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                        <ExternalLink className="h-4 w-4" />
-                        Visit
-                      </a>
-                    </Button>
-                    <Button size="sm" variant="secondary" asChild>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                        <Github className="h-4 w-4" />
-                        Code
-                      </a>
-                    </Button>
-                  </div>
-                  {/* Mobile buttons */}
-                  <div className="md:hidden flex gap-2 p-2 bg-background/80 backdrop-blur-sm">
-                    <Button size="sm" variant="secondary" className="flex-1" asChild>
-                      <a href={project.link} target="_blank" rel="noopener noreferrer">
-                        View
-                      </a>
-                    </Button>
-                    <Button size="sm" variant="secondary" className="flex-1" asChild>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        Code
-                      </a>
-                    </Button>
-                  </div>
                 </div>
                 <CardContent className="p-6 flex-1 flex flex-col">
                   <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                   <p className="text-muted-foreground mb-4 flex-1">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
@@ -130,6 +102,20 @@ export default function ProjectsSection() {
                         {tag}
                       </span>
                     ))}
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <Button asChild>
+                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                        <ExternalLink className="h-4 w-4" />
+                        View Site
+                      </a>
+                    </Button>
+                    <Button variant="outline" asChild>
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                        <Github className="h-4 w-4" />
+                        View Code
+                      </a>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
