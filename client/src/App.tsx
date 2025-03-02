@@ -13,12 +13,10 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/achievements" component={Achievements} />
-      <Route path="/experience" component={Experience} />
-      <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>
   );
+  
 }
 
 function App() {
