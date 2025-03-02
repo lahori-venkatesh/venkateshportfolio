@@ -84,7 +84,7 @@ export default function HeroSection() {
           {/* Image container with animation */}
           <div className="relative z-10 rounded-full overflow-hidden border-4 border-background shadow-xl ">
             <img
-              src="/images/mypic.svg"
+              src="/images/mypic.webp"
               alt="Venkatesh"
               className="w-full h-full object-cover rounded-full"
             />
