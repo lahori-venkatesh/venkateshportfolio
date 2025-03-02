@@ -14,10 +14,13 @@ export default function HeroSection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center lg:text-left mt-8 lg:mt-0"
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-            Hi, I'm <span className="text-primary">Venkatesh</span>
-          </h1>
-          <div className="text-xl sm:text-2xl text-muted-foreground mb-6 h-16 flex items-center justify-center lg:justify-start">
+          <span className="text-xl md:text-2xl text-muted-foreground mb-2 block">
+              Hello, I am
+            </span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary">
+              Lahori Venkatesh
+            </h1>
+            <div className="text-xl md:text-2xl text-muted-foreground mb-6 h-[32px]">
             <Typewriter
               options={{
                 strings: [
@@ -75,37 +78,17 @@ export default function HeroSection() {
           />
 
           {/* Rotating circles */}
-          <motion.div
-            className="absolute -inset-4 border-2 border-primary/20 rounded-full"
-            animate={{ rotate: 360 }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
-          <motion.div
-            className="absolute -inset-8 border border-primary/10 rounded-full"
-            animate={{ rotate: -360 }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
+          <div className="absolute -inset-4 border-2 border-primary/20 rounded-full" />
+          <div className="absolute -inset-8 border border-primary/10 rounded-full" />
 
           {/* Image container with animation */}
-          <motion.div
-            className="relative z-10 rounded-full overflow-hidden border-4 border-background shadow-xl"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-          >
+          <div className="relative z-10 rounded-full overflow-hidden border-4 border-background shadow-xl ">
             <img
-              src="https://images.unsplash.com/photo-1573496799515-eebbb63814f2"
+              src="/src/images/mypic.svg"
               alt="Venkatesh"
               className="w-full h-full object-cover rounded-full"
             />
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -1,127 +1,220 @@
+import { useState, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Github, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import useEmblaCarousel from 'embla-carousel-react';
 
 const projects = [
   {
-    title: "E-commerce Platform",
-    description: "A full-stack e-commerce solution with real-time inventory management",
-    image: "https://images.unsplash.com/photo-1508873535684-277a3cbcc4e8",
-    link: "#",
-    github: "#",
-    tags: ["React", "Node.js", "MongoDB"]
+    title: "E-Commerce Platform",
+    description: "A responsive online store built with React",
+    images: [
+      "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&h=500",
+      "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&w=800&h=500",
+      "https://images.unsplash.com/photo-1520333789090-1afc82db536a?auto=format&fit=crop&w=800&h=500",
+    ],
+    category: "Web",
+    tech: ["React", "Node.js", "MongoDB"],
+    github: "https://github.com",
+    live: "https://example.com",
   },
   {
-    title: "Analytics Dashboard",
-    description: "Real-time data visualization and analytics platform",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
-    link: "#",
-    github: "#",
-    tags: ["Vue.js", "D3.js", "Express"]
+    title: "Task Management App",
+    description: "Mobile-first task manager with real-time updates",
+    images: [
+      "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?auto=format&fit=crop&w=800&h=500",
+      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&h=500",
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&h=500",
+    ],
+    category: "Mobile",
+    tech: ["React Native", "Firebase"],
+    github: "https://github.com",
+    live: "https://example.com",
   },
   {
-    title: "Social Network App",
-    description: "A modern social networking platform with real-time features",
-    image: "https://images.unsplash.com/photo-1739514984003-330f7c1d2007",
-    link: "#",
-    github: "#",
-    tags: ["React Native", "Firebase", "WebSocket"]
+    title: "Task Management App",
+    description: "Mobile-first task manager with real-time updates",
+    images: [
+      "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?auto=format&fit=crop&w=800&h=500",
+      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&h=500",
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&h=500",
+    ],
+    category: "Mobile",
+    tech: ["React Native", "Firebase"],
+    github: "https://github.com",
+    live: "https://example.com",
   },
-  {
-    title: "Task Management",
-    description: "Collaborative task management system with team features",
-    image: "https://images.unsplash.com/photo-1510759395231-72b17d622279",
-    link: "#",
-    github: "#",
-    tags: ["Next.js", "PostgreSQL", "Prisma"]
-  },
-  {
-    title: "Learning Platform",
-    description: "Interactive online learning platform with video courses",
-    image: "https://images.unsplash.com/photo-1660592868727-858d28c3ba52",
-    link: "#",
-    github: "#",
-    tags: ["React", "Node.js", "AWS"]
-  },
-  {
-    title: "Health Tracking App",
-    description: "Personal health and fitness tracking application",
-    image: "https://images.unsplash.com/photo-1685478237595-f452cb125f27",
-    link: "#",
-    github: "#",
-    tags: ["Flutter", "Firebase", "GraphQL"]
-  }
 ];
 
-export default function ProjectsSection() {
+const categories = ["All", "Web", "Mobile"];
+
+function ProjectCarousel({ images }: { images: string[] }) {
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: true,
+    dragFree: true,
+  });
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  // Auto-scroll functionality
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const interval = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [emblaApi]);
+
+  // Update selected index for dots
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    };
+
+    emblaApi.on('select', onSelect);
+    return () => emblaApi.off('select', onSelect);
+  }, [emblaApi]);
+
   return (
-    <section className="py-20">
-      <div className="container px-4">
+    <div className="relative">
+      <div className="overflow-hidden" ref={emblaRef}>
+        <div className="flex">
+          {images.map((image, index) => (
+            <div key={index} className="relative flex-[0_0_100%]">
+              <img
+                src={image}
+                alt="Project preview"
+                className="object-cover w-full aspect-video"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Navigation Buttons */}
+      <Button
+        variant="outline"
+        size="icon"
+        className="absolute left-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm z-10"
+        onClick={scrollPrev}
+      >
+        <ChevronLeft className="h-4 w-4" />
+      </Button>
+      <Button
+        variant="outline"
+        size="icon"
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm z-10"
+        onClick={scrollNext}
+      >
+        <ChevronRight className="h-4 w-4" />
+      </Button>
+
+      {/* Pagination Dots */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            className={`w-2 h-2 rounded-full transition-colors ${
+              index === selectedIndex 
+                ? 'bg-primary' 
+                : 'bg-primary/20'
+            }`}
+            onClick={() => emblaApi?.scrollTo(index)}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function Projects() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredProjects = projects.filter(
+    (project) => activeCategory === "All" || project.category === activeCategory
+  );
+
+  return (
+    <section id="projects" className="py-20 bg-accent/5">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">Featured Projects</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and expertise
-          </p>
+          <h2 className="text-3xl font-bold mb-12 text-center">Projects</h2>
+          <div className="flex justify-center gap-4 mb-8">
+            {categories.map((category) => (
+              <Button
+                key={category}
+                variant={activeCategory === category ? "default" : "outline"}
+                onClick={() => setActiveCategory(category)}
+                className="px-4"
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProjects.map((project) => (
+              <motion.div
+                key={project.title}
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Card className="overflow-hidden h-full flex flex-col">
+                  <ProjectCarousel images={project.images} />
+                  <CardHeader>
+                    <CardTitle>{project.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-1 flex flex-col">
+                    <p className="text-muted-foreground mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-1 text-xs rounded-full bg-primary/10"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="mt-auto space-y-2 sm:space-y-0 sm:flex sm:gap-2">
+                      <Button className="w-full sm:w-auto" asChild>
+                        <a href={project.live} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          Live Demo
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="w-full sm:w-auto" asChild>
+                        <a href={project.github} target="_blank" rel="noopener noreferrer">
+                          <Github className="mr-2 h-4 w-4" />
+                          View Code
+                        </a>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-              className="transform transition-all duration-300"
-            >
-              <Card className="overflow-hidden border-2 hover:border-primary/50 transition-colors h-full flex flex-col">
-                <div className="relative">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover"
-                  />
-                </div>
-                <CardContent className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground mb-4 flex-1">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <Button asChild>
-                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                        <ExternalLink className="h-4 w-4" />
-                        View Site
-                      </a>
-                    </Button>
-                    <Button variant="outline" asChild>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                        <Github className="h-4 w-4" />
-                        View Code
-                      </a>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );

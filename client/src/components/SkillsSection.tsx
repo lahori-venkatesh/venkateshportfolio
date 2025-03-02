@@ -1,77 +1,97 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Code2, Palette, Server, Database } from "lucide-react";
+import { Code2, Palette, Server, Layout, Smartphone, Brush } from "lucide-react";
 
 const skills = [
   {
-    title: "Frontend Development",
-    icon: <Code2 className="h-6 w-6" />,
-    items: ["React", "TypeScript", "Tailwind CSS", "Next.js"]
+    name: "Frontend Development",
+    description: "Building responsive web applications with React and TypeScript",
+    icon: Code2,
+    technologies: ["JavaScript", "React", "TypeScript", "HTML/CSS"]
   },
   {
-    title: "UI/UX Design",
-    icon: <Palette className="h-6 w-6" />,
-    items: ["Figma", "Adobe XD", "User Research", "Prototyping"]
+    name: "UI/UX Design",
+    description: "Creating intuitive and beautiful user interfaces",
+    icon: Palette,
+    technologies: ["Figma", "Adobe XD", "User Research"]
   },
   {
-    title: "Backend Development",
-    icon: <Server className="h-6 w-6" />,
-    items: ["Node.js", "Express", "Python", "Java"]
+    name: "Backend Development",
+    description: "Developing scalable server-side applications",
+    icon: Server,
+    technologies: ["Node.js", "Express", "PostgreSQL"]
   },
   {
-    title: "Database",
-    icon: <Database className="h-6 w-6" />,
-    items: ["PostgreSQL", "MongoDB", "Redis", "MySQL"]
+    name: "Web Design",
+    description: "Crafting modern and responsive layouts",
+    icon: Layout,
+    technologies: ["Tailwind CSS", "SASS", "Bootstrap"]
+  },
+  {
+    name: "Mobile Development",
+    description: "Building cross-platform mobile applications",
+    icon: Smartphone,
+    technologies: ["React Native", "Flutter"]
+  },
+  {
+    name: "Creative Design",
+    description: "Creating visual assets and branding materials",
+    icon: Brush,
+    technologies: ["Photoshop", "Illustrator"]
   }
 ];
 
-export default function SkillsSection() {
+export default function Skills() {
   return (
-    <section className="py-20 bg-muted/50">
-      <div className="container px-4">
+    <section id="skills" className="py-20 bg-accent/5">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center"
         >
-          <h2 className="text-3xl font-bold mb-4">Skills & Expertise</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            With a diverse skill set and years of experience, I bring ideas to life through code
+          <h2 className="text-3xl font-bold mb-4">Skills</h2>
+          <p className="text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Combining technical expertise with creative problem-solving to deliver exceptional results
           </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skills.map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="mb-4 flex justify-center">
+                      <div className="p-3 rounded-full bg-primary/10">
+                        <skill.icon className="h-6 w-6 text-primary" />
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2">{skill.name}</h3>
+                    <p className="text-muted-foreground mb-4 text-sm">
+                      {skill.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {skill.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-              className="transform transition-all duration-300"
-            >
-              <Card className="overflow-hidden border-2 hover:border-primary/50 transition-colors">
-                <CardContent className="p-6">
-                  <div className="mb-4 text-primary bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center">
-                    {skill.icon}
-                  </div>
-                  <h3 className="text-lg font-semibold mb-3">{skill.title}</h3>
-                  <ul className="space-y-2">
-                    {skill.items.map((item) => (
-                      <li key={item} className="text-muted-foreground flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary/50" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );

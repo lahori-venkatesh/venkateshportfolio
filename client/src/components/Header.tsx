@@ -9,9 +9,9 @@ const navItems = [
   { name: "Home", href: "#home" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
-  { name: "About", href: "#about" },
-  { name: "Case Studies", href: "#case-studies" },
-  { name: "Testimonials", href: "#testimonials" }
+  { name: "Experience", href: "#experience" },
+  { name: "Testimonials", href: "#testimonials" },
+  { name: "Contact", href: "#contact" }
 ];
 
 export default function Header() {
@@ -55,7 +55,7 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <ThemeToggle />
           <Button 
-            variant="outline"
+            variant="default"
             size="sm"
             className="hidden md:flex items-center gap-2"
             asChild
