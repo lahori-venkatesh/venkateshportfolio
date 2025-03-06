@@ -25,17 +25,17 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Social</h3>
             <div className="flex space-x-4">
               <Button variant="ghost" size="icon" asChild>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/lahori-venkatesh" target="_blank" rel="noopener noreferrer">
                   <Github className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/venkatesh-lahori/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5" />
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://x.com/NIT_Venkatesh" target="_blank" rel="noopener noreferrer">
                   <Twitter className="h-5 w-5" />
                 </a>
               </Button>

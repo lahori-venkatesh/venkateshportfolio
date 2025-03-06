@@ -60,7 +60,7 @@ export default function Header() {
             className="hidden md:flex items-center gap-2"
             asChild
           >
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/lahori-venkatesh" target="_blank" rel="noopener noreferrer">
               <Github className="h-4 w-4" />
               GitHub
             </a>
