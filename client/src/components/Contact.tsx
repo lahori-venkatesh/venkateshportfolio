@@ -94,7 +94,7 @@ export default function Contact() {
                     href="tel:+1-555-123-4567"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    +1-555-123-4567
+                    9182928956
                   </a>
                 </div>
               </div>

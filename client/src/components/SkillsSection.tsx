@@ -7,37 +7,40 @@ const skills = [
     name: "Frontend Development",
     description: "Building responsive web applications with React and TypeScript",
     icon: Code2,
-    technologies: ["JavaScript", "React", "TypeScript", "HTML/CSS"]
+    technologies: ["JavaScript", "React", "TypeScript", "HTML/CSS", "Tailwind CSS", "Vite", "Next.js", "Shadcn UI"]
   },
   {
     name: "UI/UX Design",
     description: "Creating intuitive and beautiful user interfaces",
     icon: Palette,
-    technologies: ["Figma", "Adobe XD", "User Research"]
+    technologies: ["Figma", "Adobe XD", "User Research", "Wireframing", "Prototyping", "UI Design" , "Interaction Design", "Responsive Design", " Design Systems " , ]
   },
-  {
-    name: "Backend Development",
-    description: "Developing scalable server-side applications",
-    icon: Server,
-    technologies: ["Node.js", "Express", "PostgreSQL"]
-  },
-  {
-    name: "Web Design",
-    description: "Crafting modern and responsive layouts",
-    icon: Layout,
-    technologies: ["Tailwind CSS", "SASS", "Bootstrap"]
-  },
-  {
-    name: "Mobile Development",
-    description: "Building cross-platform mobile applications",
-    icon: Smartphone,
-    technologies: ["React Native", "Flutter"]
-  },
+  // {
+//     name: "Backend Development",
+//     description: "Developing scalable server-side applications",
+//     icon: Server,
+//     technologies: ["Node.js", "Express", "PostgreSQL"]
+// }
+
+  // {
+    // name: "Web Design",
+    // description: "Crafting modern and responsive layouts",
+    // icon: Layout,
+    // technologies: ["Tailwind CSS", "SASS", "Bootstrap"]
+// }
+
+  // {
+//     name: "Mobile Development",
+//     description: "Building cross-platform mobile applications",
+//     icon: Smartphone,
+//     technologies: ["React Native"]
+// }
+
   {
     name: "Creative Design",
     description: "Creating visual assets and branding materials",
     icon: Brush,
-    technologies: ["Photoshop", "Illustrator"]
+    technologies: ["Photoshop", "Illustrator" ," Canva" ," Premiere Pro" , "Content Creation"]
   }
 ];
 

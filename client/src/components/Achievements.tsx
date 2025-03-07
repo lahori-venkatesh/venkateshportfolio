@@ -5,16 +5,23 @@ import { Award, GraduationCap, Trophy } from "lucide-react";
 const achievements = [
   {
     type: "award",
-    title: "Best Hackathon Project",
-    description: "Won for innovative AI solution",
+    title: "2024 Aspire Leaders Program Completion",
+    description: "Successfully completed 30 hours of coursework in the Aspire Leaders Program.",
     date: "March 2022",
     icon: Trophy
   },
   {
     type: "certification",
-    title: "AWS Certified Solutions Architect",
-    description: "Professional certification",
-    date: "June 2022",
+    title: "UX Kickstarter Workshop Completion",
+    description: "Successfully completed the UX Kickstarter Workshop",
+    date: "November 20224",
+    icon: GraduationCap
+  },
+  {
+    type: "certification",
+    title: "Delta Full Stack Web Development",
+    description: "Successfully completed the Delta Full Stack Web Development course",
+    date: "Feb 2024",
     icon: GraduationCap
   },
   // Add more achievements

@@ -7,43 +7,69 @@ import useEmblaCarousel from 'embla-carousel-react';
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A responsive online store built with React",
+    title: "InfyCo - Peer-to-Peer Knowledge Sharing Platform",
+    description: "InfyCo connects students with industry professionals for mentorship, career guidance, project assistance, and resume reviews, empowering students to enhance their skills and career growth.",
     images: [
-      "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=800&h=500",
-      "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&w=800&h=500",
-      "https://images.unsplash.com/photo-1520333789090-1afc82db536a?auto=format&fit=crop&w=800&h=500",
+      "public/images/infyco1.png",
+      "public/images/infyco2.png",
+      "public/images/infyco3.png",
     ],
     category: "Web",
-    tech: ["React", "Node.js", "MongoDB"],
-    github: "https://github.com",
-    live: "https://example.com",
+    tech: ["React", "Next.js", "Tailwind CSS", "Radix UI Primitives" , "Zustand State Management" , "date-fns & React Day Picker" , "Recharts for visualizations" , " Netlify Hosting"],
+    github: "https://github.com/lahori-venkatesh/infyco-public",
+    live: "live link : https://infyco.in/",
   },
   {
-    title: "Task Management App",
-    description: "Mobile-first task manager with real-time updates",
+    title: "Medivars - Doctor Consultation platform for Healthcare Solutions",
+    description: "A cutting-edge Doctor Consultation platform connecting patients with healthcare providers through video consultations, messaging, and appointment management, offering features for patients, doctors, and administrators.",
     images: [
-      "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?auto=format&fit=crop&w=800&h=500",
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&h=500",
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&h=500",
+      "public/images/medivars1.png",
+      "public/images/medivars2.png",
+      "public/images/medivars3.png",
     ],
-    category: "Mobile",
-    tech: ["React Native", "Firebase"],
-    github: "https://github.com",
-    live: "https://example.com",
+    category: "Web",
+    tech: ["React", "Typescript", "Tailwind CSS", "Vite" , " React Router"],
+    github: "https://github.com/lahori-venkatesh/medivars-public",
+    live: " https://medivars.netlify.app/",
   },
   {
-    title: "Task Management App",
-    description: "Mobile-first task manager with real-time updates",
+    title: "Flexora - Connecting Freelancers with Startups & Bussinesses",
+    description: "A freelancing platform designed to connect talented freelancers with startups and small businesses. Clients can post projects, review proposals, and communicate in real-time with freelancers.",
     images: [
-      "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?auto=format&fit=crop&w=800&h=500",
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&h=500",
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&h=500",
+      "public/images/flexora1.png",
+      "public/images/flexora2.png",
+      "public/images/flexora3.png",
     ],
-    category: "Mobile",
-    tech: ["React Native", "Firebase"],
-    github: "https://github.com",
-    live: "https://example.com",
+    category: "Web",
+    tech: ["React", "Typescript", "Tailwind CSS", "Vite " , "Shadcn UI Components" , "React Router" , "Recharts for visualizations" , "Axios"," Sonner Toasts" ],
+    github: " https://github.com/lahori-venkatesh/flexora-public",
+    live: "https://flexorafree.netlify.app/",
+  },
+  {
+    title: "Personal Portfolio Project for Showcase my skills & Projects",
+    description: "A personal portfolio showcasing my skills, projects, and experience in UX design, frontend development, and more. Built with React, TypeScript, and Tailwind CSS for a modern and responsive design..",
+    images: [
+      "public/images/portfolio1.png",
+      "public/images/portfolio2.png",
+      "public/images/portfolio3.png",
+    ],
+    category: "Web",
+    tech: ["React", "TypeScript", "Tailwind CSS" , "Vite" , "Typewrite.js" , "Shadcn-ui"],
+    github: " https://githuZb.com/lahori-venkatesh/LahoriVenkatesh",
+    live: "https://lahorivenkatesh.netlify.app/",
+  },
+  {
+    title: "TheSocialArt - Digital Marketing Agency Landing Page",
+    description: "A sleek landing page for TheSocialArt, a digital marketing agency, built with HTML, JavaScript, and Tailwind CSS, offering a responsive, interactive, and engaging user experience.",
+    images: [
+      "public/images/socialartist1.png",
+      "public/images/socialartist2.png",
+      "public/images/socialartist3.png",
+    ],
+    category: "Web",
+    tech: ["HTML", "JavaScript", "Tailwind CSS"],
+    github: " https://github.com/lahori-venkatesh/freelancing-project-thesocialartist",
+    live: "https://thesocialartist.in/",
   },
 ];
 
@@ -195,16 +221,16 @@ export default function Projects() {
                         </span>
                       ))}
                     </div>
-                    <div className="mt-auto space-y-2 sm:space-y-0 sm:flex sm:gap-2">
+                    <div className="mt-auto space-y-4 space-x-8 sm:space-y-0 sm:flex sm:gap-2">
                       <Button className="w-full sm:w-auto" asChild>
                         <a href={project.live} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="mr-2 h-4 w-4" />
+                          <ExternalLink className="mr-2 h-4 w-6" />
                           Live Demo
                         </a>
                       </Button>
                       <Button variant="outline" className="w-full sm:w-auto" asChild>
                         <a href={project.github} target="_blank" rel="noopener noreferrer">
-                          <Github className="mr-2 h-4 w-4" />
+                          <Github className="mr-2 h-4 w-8" />
                           View Code
                         </a>
                       </Button>

@@ -4,8 +4,8 @@ import { Mail, Github, Linkedin, Twitter } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-muted py-12">
-      <div className="container px-4">
+    <footer className="bg-muted py-2">
+      <div className="container px-4 ml-24 mt-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -14,10 +14,10 @@ export default function Footer() {
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact</h3>
+            <h3 className="text-lg font-semibold mb-4 ">Contact</h3>
             <Button variant="link" className="h-auto p-0 text-muted-foreground">
               <Mail className="h-4 w-4 mr-2" />
-              contact@venkatesh.dev
+             lahorivenkatesh709@gmail.com
             </Button>
           </div>
 
@@ -63,13 +63,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
-            <p className="text-sm text-muted-foreground mb-4">
-              Subscribe to my newsletter for updates and insights
-            </p>
-            <Button>Subscribe</Button>
-          </div>
+          
         </motion.div>
 
         <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
