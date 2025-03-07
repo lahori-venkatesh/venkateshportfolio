@@ -221,16 +221,16 @@ export default function Projects() {
                         </span>
                       ))}
                     </div>
-                    <div className="mt-auto space-y-4 space-x-8 sm:space-y-0 sm:flex sm:gap-2">
+                    <div className="mt-auto space-y-4  sm:space-y-0 sm:flex sm:gap-2">
                       <Button className="w-full sm:w-auto" asChild>
                         <a href={project.live} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="mr-2 h-4 w-6" />
+                          <ExternalLink className=" h-4 w-6" />
                           Live Demo
                         </a>
                       </Button>
                       <Button variant="outline" className="w-full sm:w-auto" asChild>
                         <a href={project.github} target="_blank" rel="noopener noreferrer">
-                          <Github className="mr-2 h-4 w-8" />
+                          <Github className=" h-4 w-6" />
                           View Code
                         </a>
                       </Button>

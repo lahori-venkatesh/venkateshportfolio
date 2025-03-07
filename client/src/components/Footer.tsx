@@ -5,7 +5,7 @@ import { Mail, Github, Linkedin, Twitter } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="bg-muted py-2">
-      <div className="container px-4 ml-24 mt-12">
+      <div className="container px-4 ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ export default function Footer() {
         </motion.div>
 
         <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Venkatesh. All rights reserved.
+          © {new Date().getFullYear()} Lahori Venkatesh. All rights reserved.
         </div>
       </div>
     </footer>
