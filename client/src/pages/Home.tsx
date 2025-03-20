@@ -42,10 +42,10 @@ export default function Home() {
           <ProjectsSection />
         </section>
 
-        {/* 5️⃣ Case Studies (Problem-Solving) */}
-        <section id="casestudiessection">
+         {/* 5️⃣ Case Studies (Problem-Solving) */}
+        {/*<section id="casestudiessection">
           <CaseStudiesSection />
-        </section>
+        </section>*/}
 
         {/* 6️⃣ Achievements (Awards & Recognitions) */}
         <section id="achievements">
@@ -53,9 +53,9 @@ export default function Home() {
         </section>
 
         {/* 7️⃣ Testimonials (Social Proof) */}
-        <section id="testimonialssection">
+        {/*<section id="testimonialssection">
           <TestimonialsSection />
-        </section>
+        </section>*/}
 
         {/* 8️⃣ Contact (Final Call to Action) */}
         <section id="contact">

@@ -4,13 +4,13 @@ import { Briefcase } from "lucide-react";
 
 const experience = [
   {
-    company: "Tech Corp",
-    role: "Software Engineer",
-    duration: "Jan 2020 - Present",
+    company: "Freelance Work",
+    role: "Frontend Developer",
+    duration: "Feb 2025 - Present",
     responsibilities: [
-      "Developed RESTful APIs",
-      "Led frontend development team",
-      "Implemented CI/CD pipelines"
+      "Designed and Developed a Landing Page",
+      //"Led frontend development team",
+      //"Implemented CI/CD pipelines"
     ],
     achievements: [
       "Reduced load time by 30%",
