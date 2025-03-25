@@ -24,7 +24,7 @@ export default function HeroSection() {
             <Typewriter
               options={{
                 strings: [
-                  'Content Creator',
+                  //'Content Creator',
                   'UX Designer',
                   'Frontend Developer'
                 ],
@@ -44,16 +44,16 @@ export default function HeroSection() {
             transition={{ delay: 0.5, duration: 0.5 }}
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
-            <a href="https://your-resume-link.com"   target="_blank"  rel="noopener noreferrer">
+            <a href="https://drive.google.com/file/d/1N6fx_pSZfJQXFmN9csaU9pCs2ePmvMla/view?usp=sharing"   target="_blank"  rel="noopener noreferrer">
              <Button size="lg" className="gap-2">
                <FileText className="h-5 w-5" />
                  View Resume
               </Button>
             </a>
             <Button size="lg" variant="outline" className="gap-2" asChild>
-              <a href="https://leetcode.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://dribbble.com/UX_Venkatesh" target="_blank" rel="noopener noreferrer">
                 <SiLeetcode className="h-5 w-5" />
-                LeetCode
+               Dribble
               </a>
             </Button>
           </motion.div>
