@@ -28,17 +28,17 @@ export default function Home() {
         </section>
 
         {/* 2️⃣ Skills (Capabilities) */}
-        <section id="skillssection">
+        <section id="skillssection" className="pt-4">
           <SkillsSection />
         </section>
 
         {/* 3️⃣ Experience (Work History) */}
-        <section id="experience">
+        <section id="experience" className="pt-4">
           <Experience />
         </section>
 
         {/* 4️⃣ Projects (Portfolio Showcase) */}
-        <section id="projectssection">
+        <section id="projectssection" className="pt-1">
           <ProjectsSection />
         </section>
 
@@ -48,7 +48,7 @@ export default function Home() {
         </section>*/}
 
         {/* 6️⃣ Achievements (Awards & Recognitions) */}
-        <section id="achievements">
+        <section id="achievements" className="pt-4">
           <Achievements />
         </section>
 

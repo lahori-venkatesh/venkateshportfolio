@@ -66,7 +66,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 bg-accent/5">
+    <section id="contact" className="py-10 bg-accent/5">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

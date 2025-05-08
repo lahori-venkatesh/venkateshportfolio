@@ -72,7 +72,7 @@ const timeline = [
 
 export default function MyStory() {
   return (
-    <section id="story" className="py-20 bg-accent/5">
+    <section id="story" className="py-10 bg-accent/5">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

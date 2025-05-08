@@ -7,10 +7,10 @@ import { useState } from "react";
 
 const navItems = [
   { name: "Home", href: "#home" },
-  { name: "Skills", href: "#skills" },
-  { name: "Projects", href: "#projects" },
+  { name: "Skills", href: "#skillssection" },
+  { name: "Projects", href: "#projectssection" },
   { name: "Experience", href: "#experience" },
-  { name: "Testimonials", href: "#testimonials" },
+  { name: "Achievements", href: "#achievements" },
   { name: "Contact", href: "#contact" }
 ];
 
@@ -18,10 +18,19 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.querySelector(sectionId);
+    const element = document.getElementById(sectionId.replace('#', ''));
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
+      const headerHeight = 64;
+      setIsMobileMenuOpen(false); // Close menu immediately
+      
+      // Add a small delay to ensure the menu is closed before scrolling
+      setTimeout(() => {
+        const offsetPosition = element.offsetTop - headerHeight;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }, 50);
     }
   };
 

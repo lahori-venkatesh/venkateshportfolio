@@ -59,7 +59,7 @@ export default function Testimonials() {
   }, [emblaApi]);
 
   return (
-    <section id="testimonials" className="py-20">
+    <section id="testimonials" className="py-10">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
