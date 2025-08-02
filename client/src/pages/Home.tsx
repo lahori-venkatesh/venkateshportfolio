@@ -21,24 +21,24 @@ export default function Home() {
         transition={{ duration: 0.5 }}
       />
       <Header />
-      <main>
+      <main className="space-y-0">
         {/* 1️⃣ Hero Section (Introduction) */}
         <section id="home">
           <HeroSection />
         </section>
 
         {/* 2️⃣ Skills (Capabilities) */}
-        <section id="skillssection" className="pt-4">
+        <section id="skillssection">
           <SkillsSection />
         </section>
 
         {/* 3️⃣ Experience (Work History) */}
-        <section id="experience" className="pt-4">
+        <section id="experience">
           <Experience />
         </section>
 
         {/* 4️⃣ Projects (Portfolio Showcase) */}
-        <section id="projectssection" className="pt-1">
+        <section id="projectssection">
           <ProjectsSection />
         </section>
 
@@ -48,7 +48,7 @@ export default function Home() {
         </section>*/}
 
         {/* 6️⃣ Achievements (Awards & Recognitions) */}
-        <section id="achievements" className="pt-4">
+        <section id="achievements">
           <Achievements />
         </section>
 
