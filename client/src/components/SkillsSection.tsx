@@ -1,33 +1,47 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
+
+
 import { 
   Code2, 
   Palette, 
-  Server, 
-  Layout, 
-  Smartphone, 
   Brush, 
   Zap,
   TrendingUp,
-  Star
+  GitBranch
 } from "lucide-react";
 
 const skillCategories = [
   {
-    category: "Frontend Development",
+    category: "Full-Stack Development",
     icon: Code2,
-    description: "Modern web development with cutting-edge technologies",
+    description: "End-to-end web development with modern technologies",
     skills: [
-      { name: "React", proficiency: 95, level: "Expert" },
-      { name: "TypeScript", proficiency: 90, level: "Advanced" },
-      { name: "JavaScript", proficiency: 95, level: "Expert" },
-      { name: "Next.js", proficiency: 85, level: "Advanced" },
-      { name: "Tailwind CSS", proficiency: 90, level: "Expert" },
-      { name: "HTML/CSS", proficiency: 95, level: "Expert" },
-      { name: "Vite", proficiency: 80, level: "Advanced" },
-      { name: "Shadcn UI", proficiency: 85, level: "Advanced" }
+      { name: "React", proficiency: 75 },
+      { name: "TypeScript", proficiency: 65 },
+      { name: "JavaScript", proficiency: 78 },
+      { name: "Java with DSA", proficiency: 70 },
+      { name: "Node.js", proficiency: 72 },
+      { name: "Express.js", proficiency: 68 },
+      { name: "MongoDB", proficiency: 65 },
+      { name: "PostgreSQL", proficiency: 60 },
+      { name: "Tailwind CSS", proficiency: 75 },
+      { name: "HTML/CSS", proficiency: 78 },
+      { name: "REST APIs", proficiency: 70 },
+      { name: "GraphQL", proficiency: 55 }
+    ]
+  },
+  {
+    category: "DevOps & Version Control",
+    icon: GitBranch,
+    description: "Development workflow and deployment automation",
+    skills: [
+      { name: "Git", proficiency: 75 },
+      { name: "GitHub", proficiency: 72 },
+      { name: "CI/CD", proficiency: 60 },
+      { name: "Docker", proficiency: 55 },
+      { name: "AWS", proficiency: 50 },
+      { name: "Vercel", proficiency: 65 }
     ]
   },
   {
@@ -35,15 +49,15 @@ const skillCategories = [
     icon: Palette,
     description: "Creating intuitive and beautiful user experiences",
     skills: [
-      { name: "Figma", proficiency: 90, level: "Expert" },
-      { name: "Adobe XD", proficiency: 85, level: "Advanced" },
-      { name: "User Research", proficiency: 80, level: "Advanced" },
-      { name: "Wireframing", proficiency: 90, level: "Expert" },
-      { name: "Prototyping", proficiency: 85, level: "Advanced" },
-      { name: "UI Design", proficiency: 90, level: "Expert" },
-      { name: "Interaction Design", proficiency: 85, level: "Advanced" },
-      { name: "Responsive Design", proficiency: 95, level: "Expert" },
-      { name: "Design Systems", proficiency: 80, level: "Advanced" }
+      { name: "Figma", proficiency: 78 },
+      { name: "Adobe XD", proficiency: 65 },
+      { name: "User Research", proficiency: 60 },
+      { name: "Wireframing", proficiency: 75 },
+      { name: "Prototyping", proficiency: 70 },
+      { name: "UI Design", proficiency: 75 },
+      { name: "Interaction Design", proficiency: 68 },
+      { name: "Responsive Design", proficiency: 78 },
+      { name: "Design Systems", proficiency: 65 }
     ]
   },
   {
@@ -51,30 +65,23 @@ const skillCategories = [
     icon: Brush,
     description: "Visual design and content creation expertise",
     skills: [
-      { name: "Photoshop", proficiency: 85, level: "Advanced" },
-      { name: "Illustrator", proficiency: 80, level: "Advanced" },
-      { name: "Canva", proficiency: 90, level: "Expert" },
-      { name: "Premiere Pro", proficiency: 75, level: "Intermediate" },
-      { name: "Content Creation", proficiency: 85, level: "Advanced" }
+      { name: "Photoshop", proficiency: 70 },
+      { name: "Illustrator", proficiency: 65 },
+      { name: "Canva", proficiency: 75 },
+      { name: "Premiere Pro", proficiency: 60 },
+      { name: "Content Creation", proficiency: 72 }
     ]
   }
 ];
 
 const getProficiencyColor = (proficiency: number) => {
-  if (proficiency >= 90) return "bg-emerald-500";
-  if (proficiency >= 80) return "bg-blue-500";
-  if (proficiency >= 70) return "bg-yellow-500";
-  return "bg-gray-500";
+  if (proficiency >= 75) return "bg-emerald-500 border-emerald-500";
+  if (proficiency >= 65) return "bg-blue-500 border-blue-500";
+  if (proficiency >= 55) return "bg-yellow-500 border-yellow-500";
+  return "bg-gray-500 border-gray-500";
 };
 
-const getLevelColor = (level: string) => {
-  switch (level) {
-    case "Expert": return "bg-emerald-100 text-emerald-800 border-emerald-200";
-    case "Advanced": return "bg-blue-100 text-blue-800 border-blue-200";
-    case "Intermediate": return "bg-yellow-100 text-yellow-800 border-yellow-200";
-    default: return "bg-gray-100 text-gray-800 border-gray-200";
-  }
-};
+
 
 export default function Skills() {
   return (
@@ -131,44 +138,40 @@ export default function Skills() {
                 </CardHeader>
                 
                 <CardContent className="p-6">
-                  <div className="grid gap-4">
+                  <div className="text-left">
                     {category.skills.map((skill, skillIndex) => (
                       <motion.div
                         key={skill.name}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.4, delay: skillIndex * 0.1 }}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.4, delay: skillIndex * 0.05 }}
                         viewport={{ once: true }}
-                        className="group/skill"
+                        whileHover={{ scale: 1.05 }}
+                        className="group/skill inline-block m-1.5"
                       >
-                        <div className="flex items-center justify-between mb-2">
-                          <div className="flex items-center gap-3">
-                            <h4 className="font-semibold text-foreground group-hover/skill:text-primary transition-colors duration-300">
+                        <div className={`
+                          relative px-4 py-2 rounded-full border-2 transition-all duration-300 cursor-pointer
+                          ${getProficiencyColor(skill.proficiency)} bg-opacity-10 border-opacity-20
+                          hover:bg-opacity-20 hover:border-opacity-40 hover:shadow-lg
+                        `}>
+                          <div className="flex items-center gap-2">
+                            <span className="font-medium text-sm text-foreground group-hover/skill:text-primary transition-colors duration-300">
                               {skill.name}
-                            </h4>
-                            <Badge 
-                              variant="outline" 
-                              className={`text-xs font-medium ${getLevelColor(skill.level)}`}
-                            >
-                              {skill.level}
-                            </Badge>
+                            </span>
+                            <div className={`
+                              px-2 py-0.5 rounded-full text-xs font-semibold
+                              ${getProficiencyColor(skill.proficiency)} bg-opacity-20 text-foreground
+                            `}>
+                              {skill.proficiency}%
+                            </div>
                           </div>
-                          <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                            <Star className="h-3 w-3 fill-current" />
-                            <span>{skill.proficiency}%</span>
-                          </div>
-                        </div>
-                        
-                        <div className="relative">
-                          <Progress 
-                            value={skill.proficiency} 
-                            className="h-2 bg-muted"
-                          />
+                          
+                          {/* Animated background fill */}
                           <motion.div
-                            className={`absolute top-0 left-0 h-2 rounded-full ${getProficiencyColor(skill.proficiency)}`}
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.proficiency}%` }}
-                            transition={{ duration: 1, delay: skillIndex * 0.1 + 0.5 }}
+                            className={`absolute inset-0 rounded-full ${getProficiencyColor(skill.proficiency)} opacity-5`}
+                            initial={{ scale: 0 }}
+                            whileInView={{ scale: 1 }}
+                            transition={{ duration: 0.6, delay: skillIndex * 0.05 + 0.2 }}
                             viewport={{ once: true }}
                           />
                         </div>
@@ -181,39 +184,7 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Skills Summary */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <Card className="bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">
-            <CardContent className="p-8">
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">
-                    {skillCategories.reduce((acc, cat) => acc + cat.skills.length, 0)}
-                  </div>
-                  <p className="text-muted-foreground">Total Skills</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">
-                    {skillCategories.length}
-                  </div>
-                  <p className="text-muted-foreground">Categories</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">
-                    5+ Years
-                  </div>
-                  <p className="text-muted-foreground">Experience</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
+        
       </div>
     </section>
   );

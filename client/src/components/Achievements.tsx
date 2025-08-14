@@ -4,64 +4,40 @@ import { Award, GraduationCap, Trophy, Star, Calendar, ExternalLink } from "luci
 
 const achievements = [
   {
+    type: "certification",
+    title: "Complete Web Development & DSA with Java",
+    organization: "Apna College",
+    description: "Mastered front-end development using HTML, CSS, JavaScript, and React.js. Acquired strong problem-solving skills by implementing data structures and algorithms.",
+    date: "June 2023",
+    icon: GraduationCap,
+    color: "from-green-500 to-teal-500",
+    badge: "Web Development",
+    link: "#",
+    skills: ["HTML", "CSS", "JavaScript", "React.js", "Data Structures", "Algorithms", "Java"]
+  },
+  {
+    type: "certification",
+    title: "Google UX Design Professional Certificate",
+    organization: "Coursera",
+    description: "Learned user-centered design principles to create intuitive and accessible interfaces. Developed interactive prototypes and conducted usability testing to enhance UX.",
+    date: "Feb 2023",
+    icon: Award,
+    color: "from-blue-500 to-purple-500",
+    badge: "UX Design",
+    link: "#",
+    skills: ["User-Centered Design", "Prototyping", "Usability Testing", "Interface Design", "Accessibility"]
+  },
+  {
     type: "award",
     title: "2024 Aspire Leaders Program Completion",
+    organization: "Aspire Program",
     description: "Successfully completed 30 hours of coursework in the Aspire Leaders Program, demonstrating leadership and professional development skills.",
     date: "March 2024",
     icon: Trophy,
     color: "from-yellow-500 to-orange-500",
     badge: "Leadership",
-    link: "#"
-  },
-  {
-    type: "certification",
-    title: "UX Kickstarter Workshop Completion",
-    description: "Successfully completed the UX Kickstarter Workshop, gaining hands-on experience in user research, wireframing, and prototyping.",
-    date: "November 2024",
-    icon: GraduationCap,
-    color: "from-blue-500 to-purple-500",
-    badge: "UX Design",
-    link: "#"
-  },
-  {
-    type: "certification",
-    title: "Delta Full Stack Web Development",
-    description: "Successfully completed the Delta Full Stack Web Development course, mastering modern web technologies and best practices.",
-    date: "February 2024",
-    icon: GraduationCap,
-    color: "from-green-500 to-teal-500",
-    badge: "Web Development",
-    link: "#"
-  },
-  {
-    type: "award",
-    title: "Best UI/UX Design Project",
-    description: "Recognized for outstanding design work and innovative user experience solutions in academic projects.",
-    date: "December 2023",
-    icon: Award,
-    color: "from-pink-500 to-rose-500",
-    badge: "Design Excellence",
-    link: "#"
-  },
-  {
-    type: "certification",
-    title: "React & TypeScript Mastery",
-    description: "Advanced certification in React development with TypeScript, covering modern patterns and best practices.",
-    date: "January 2024",
-    icon: Star,
-    color: "from-indigo-500 to-blue-500",
-    badge: "Frontend",
-    link: "#"
-  },
-  {
-    type: "award",
-    title: "Innovation in Digital Solutions",
-    description: "Awarded for creating innovative digital solutions that solve real-world problems effectively.",
-    date: "October 2023",
-    icon: Trophy,
-    color: "from-emerald-500 to-green-500",
-    badge: "Innovation",
-    link: "#"
+    link: "#",
+    skills: ["Leadership", "Professional Development", "Team Management"]
   }
 ];
 
@@ -112,6 +88,11 @@ export default function Achievements() {
                       <CardTitle className="text-lg leading-tight group-hover:text-primary transition-colors duration-300">
                         {achievement.title}
                       </CardTitle>
+                      {achievement.organization && (
+                        <p className="text-sm font-medium text-primary/80 mt-1">
+                          {achievement.organization}
+                        </p>
+                      )}
                       <div className="flex items-center gap-2 mt-2 text-sm text-muted-foreground">
                         <Calendar className="h-3 w-3" />
                         <span>{achievement.date}</span>
@@ -124,6 +105,22 @@ export default function Achievements() {
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     {achievement.description}
                   </p>
+                  
+                  {achievement.skills && (
+                    <div className="mb-4">
+                      <h5 className="text-xs font-semibold text-muted-foreground mb-2">Key Skills</h5>
+                      <div className="flex flex-wrap gap-1">
+                        {achievement.skills.map((skill, skillIndex) => (
+                          <span
+                            key={skillIndex}
+                            className="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary font-medium"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                   
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-muted-foreground/60 capitalize">

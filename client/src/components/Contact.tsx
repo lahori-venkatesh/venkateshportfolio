@@ -43,7 +43,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Location",
-    value: "India",
+    value: "NIT Jaipur Rajasthan, India",
     href: "#",
     color: "text-red-500"
   }

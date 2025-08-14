@@ -106,7 +106,7 @@ export default function HeroSection() {
               options={{
                 strings: [
                   'UX Designer',
-                  'Frontend Developer',
+                  'Full-Stack Developer',
                   'Creative Problem Solver'
                 ],
                 autoStart: true,

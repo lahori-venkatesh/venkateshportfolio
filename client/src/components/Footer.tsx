@@ -41,13 +41,13 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+91 82928956",
+    value: "+91 9182928956",
     href: "tel:+9182928956"
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "India",
+    value: "NIT Jaipur, Rajasthan, India",
     href: "#"
   }
 ];

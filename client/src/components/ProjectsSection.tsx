@@ -16,14 +16,23 @@ const projects = [
     featured: true,
   },
   {
-    title: "TheSocialArt - Digital Marketing Agency Landing Page",
-    description: "A sleek landing page for TheSocialArt, a digital marketing agency, built with HTML, JavaScript, and Tailwind CSS, offering a responsive, interactive, and engaging user experience.",
-    image: "images/socialartist1.png",
+    title: "pdfCircle – PDF & Image Processing Web Application",
+    description: "Engineered a secure, offline-first web platform achieving an 85% Lighthouse score by leveraging React 18, TypeScript, and Vite, ensuring 100% client-side processing for maximum data privacy. Developed 17+ PDF tools and advanced image utilities with drag-and-drop functionality, boosting user retention by 35%.",
+    image: "images/pdfcircle.png",
     category: "Web",
-    tech: ["HTML", "JavaScript", "Tailwind CSS"],
-    github: " https://github.com/lahori-venkatesh/freelancing-project-thesocialartist",
-    live: "https://thesocialartist.in/",
-    featured: false,
+    tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "SEO", "Google AdSense"],
+    github: "https://github.com/lahori-venkatesh/pdfcircle",
+    live: "https://pdfcircle.com",
+    featured: true,
+    duration: "June 2023 - Jan 2024",
+    achievements: [
+      "Achieved 85% Lighthouse score with offline-first architecture",
+      "Boosted user retention by 35% through comprehensive tool suite",
+      "Reduced perceived load times by 50% and improved processing speeds 3×",
+      "Integrated multilingual support (English, Hindi, Kannada, Tamil, Telugu)",
+      "Secured Google AdSense approval and implemented SEO best practices",
+      "Architected responsive platform with code-splitting, lazy loading, caching strategies"
+    ]
   },
 ];
 
