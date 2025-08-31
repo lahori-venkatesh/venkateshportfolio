@@ -52,7 +52,7 @@ export default function Achievements() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">Achievements & Certifications</h2>
+          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">Achievements & Certifications</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Recognitions and certifications that showcase my commitment to continuous learning and professional growth
           </p>

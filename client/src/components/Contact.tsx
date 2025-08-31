@@ -125,7 +125,7 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
+          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">Get in Touch</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Ready to start a project or just want to chat? I'd love to hear from you!
           </p>

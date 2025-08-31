@@ -34,6 +34,58 @@ const projects = [
       "Architected responsive platform with code-splitting, lazy loading, caching strategies"
     ]
   },
+  {
+    title: "Pebly – URL Shortener",
+    description: "Developed a custom URL shortener supporting 1,000+ active links with memorable, branded URLs. Implemented QR code generation and file-to-URL conversion for versatile sharing. Built responsive React frontend ensuring smooth experience on desktop and mobile.",
+    image: "images/pebly.png",
+    category: "Web",
+    tech: ["React", "Node.js", "MongoDB", "Express.js", "QR Code API", "Tailwind CSS"],
+    github: "https://github.com/lahori-venkatesh/pebly",
+    live: "https://pebly.com",
+    duration: "Oct 2024 – Dec 2024",
+    achievements: [
+      "Developed full-stack functionality for efficient link management and redirection",
+      "Handling up to 10,000 redirects/day with optimized performance",
+      "Added analytics to track clicks and usage trends",
+      "Improved link performance visibility for users",
+      "Implemented QR code generation for enhanced sharing capabilities"
+    ]
+  },
+  {
+    title: "API Keys Management System",
+    description: "Built a secure platform for storing and managing multiple API keys per user. Implemented real-time API usage monitoring and subscription tracking for hundreds of API calls/user. Developed React frontend and Java backend for seamless key management operations.",
+    image: "images/api-management.png",
+    category: "Web",
+    tech: ["React", "Java", "Spring Boot", "MongoDB", "JWT", "REST API"],
+    github: "https://github.com/lahori-venkatesh/api-keys-manager",
+    live: "https://api-manager.com",
+    duration: "Jan 2025 – Mar 2025",
+    achievements: [
+      "Integrated MongoDB for scalable and secure storage of API keys",
+      "Enabled users to add, revoke, and update keys instantly",
+      "Improved workflow efficiency with real-time monitoring",
+      "Built secure authentication and authorization system",
+      "Implemented usage analytics and subscription tracking"
+    ]
+  },
+  {
+    title: "Donation Transparency Tracker",
+    description: "Created platform for NGOs to upload proof of fund utilization (receipts, images). Built donor dashboards with real-time impact analytics and social recognition ratings. Developed NGO dashboards to track donations, fund allocation, and project progress.",
+    image: "images/donation-tracker.png",
+    category: "Web",
+    tech: ["React", "Node.js", "MongoDB", "Express.js", "Chart.js", "File Upload"],
+    github: "https://github.com/lahori-venkatesh/donation-tracker",
+    live: "https://donation-tracker.com",
+    duration: "Apr 2025 – Present",
+    featured: true,
+    achievements: [
+      "Implemented MongoDB for secure, scalable storage of donation records",
+      "Enhanced transparency by enabling donor-NGO transfer tracking",
+      "Increased trust and engagement through real-time analytics",
+      "Built comprehensive dashboards for both donors and NGOs",
+      "Developed social recognition and impact measurement features"
+    ]
+  },
 ];
 
 const categories = ["All", "Featured", "Web", "Mobile"];
@@ -50,7 +102,7 @@ export default function Projects() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">Featured Projects</h2>
+          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">Featured Projects</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Explore my latest work showcasing innovative solutions and creative design approaches
           </p>

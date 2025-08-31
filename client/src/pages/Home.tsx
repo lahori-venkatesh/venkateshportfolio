@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import AchievementCards from "@/components/AchievementCards";
 import SkillsSection from "@/components/SkillsSection";
 import Experience from "@/components/Experience";
 import ProjectsSection from "@/components/ProjectsSection";
@@ -25,6 +26,11 @@ export default function Home() {
         {/* 1️⃣ Hero Section (Introduction) */}
         <section id="home">
           <HeroSection />
+        </section>
+
+        {/* 1.5️⃣ Achievement Cards (Competitive Programming) */}
+        <section id="achievementcards">
+          <AchievementCards />
         </section>
 
         {/* 2️⃣ Skills (Capabilities) */}
