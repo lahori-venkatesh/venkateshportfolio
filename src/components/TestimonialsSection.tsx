@@ -55,7 +55,9 @@ export default function Testimonials() {
     };
 
     emblaApi.on('select', onSelect);
-    return () => emblaApi.off('select', onSelect);
+    return () => {
+      emblaApi.off('select', onSelect);
+    };
   }, [emblaApi]);
 
   return (
