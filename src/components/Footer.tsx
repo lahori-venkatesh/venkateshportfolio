@@ -38,12 +38,7 @@ const contactInfo = [
     value: "lahorivenkatesh709@gmail.com",
     href: "mailto:lahorivenkatesh709@gmail.com"
   },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+91 9182928956",
-    href: "tel:+9182928956"
-  },
+
   {
     icon: MapPin,
     label: "Location",
@@ -81,9 +76,9 @@ export default function Footer() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12"
         >
           {/* Contact Section */}
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.1 }}
             viewport={{ once: true }}
             className="space-y-4"
@@ -111,9 +106,9 @@ export default function Footer() {
           </motion.div>
 
           {/* Quick Links Section */}
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.2 }}
             viewport={{ once: true }}
             className="space-y-4"
@@ -121,7 +116,7 @@ export default function Footer() {
             <h3 className="text-xl font-semibold text-foreground">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
-                <motion.li 
+                <motion.li
                   key={link.name}
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -140,9 +135,9 @@ export default function Footer() {
           </motion.div>
 
           {/* Social Links Section */}
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.3 }}
             viewport={{ once: true }}
             className="space-y-4"
@@ -168,9 +163,9 @@ export default function Footer() {
           </motion.div>
 
           {/* About Me Section */}
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.4 }}
             viewport={{ once: true }}
             className="space-y-4"
@@ -180,7 +175,7 @@ export default function Footer() {
               I'm Venkatesh Lahori, a passionate UX Designer and Frontend Developer creating innovative digital experiences. Let's collaborate and build something amazing together.
             </p>
             <Button size="sm" className="gap-2" asChild>
-              <a href="https://drive.google.com/file/d/1N6fx_pSZfJQXFmN9csaU9pCs2ePmvMla/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+              <a href="https://drive.google.com/file/d/1Q3qeG5IGym4QbsXP63o3I5sy4mm8HnWo/view" target="_blank" rel="noopener noreferrer">
                 <Download className="h-4 w-4" />
                 Download Resume
               </a>
@@ -189,7 +184,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Copyright Notice */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.5 }}

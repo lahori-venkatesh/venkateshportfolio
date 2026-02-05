@@ -22,7 +22,7 @@ export default function Header() {
     if (element) {
       const headerHeight = 64;
       setIsMobileMenuOpen(false); // Close menu immediately
-      
+
       // Add a small delay to ensure the menu is closed before scrolling
       setTimeout(() => {
         const offsetPosition = element.offsetTop - headerHeight;
@@ -36,14 +36,14 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b">
-      <motion.nav 
+      <motion.nav
         className="container mx-auto flex items-center justify-between h-16 px-4"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", duration: 0.5 }}
       >
         <Link href="/" className="text-xl font-bold flex items-center gap-2">
-          <span className="text-primary">Venkatesh</span>
+          <span className="text-primary">VenkateshPortfolio</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -63,7 +63,7 @@ export default function Header() {
 
         <div className="flex items-center gap-4">
           <ThemeToggle />
-          <Button 
+          <Button
             variant="default"
             size="sm"
             className="hidden md:flex items-center gap-2"
@@ -111,7 +111,7 @@ export default function Header() {
                   {item.name}
                 </motion.button>
               ))}
-              <Button 
+              <Button
                 variant="outline"
                 size="sm"
                 className="w-full mt-4 flex items-center justify-center gap-2"

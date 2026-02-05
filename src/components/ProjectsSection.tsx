@@ -6,11 +6,21 @@ import { Github, ExternalLink, ChevronLeft, ChevronRight, Star, Eye } from "luci
 
 const projects = [
   {
+    title: "MockInterview – Full-Stack Web Application",
+    description: "Peer-to-Peer Mock Interview Platform with Real-Time Video & Feedback. Built a full-stack web platform enabling real-time peer mock interviews using WebRTC and Socket.io. Designed responsive UIs with React and integrated REST APIs for session management.",
+    image: "images/Mockinterview.png",
+    category: "Web",
+    tech: ["React", "HTML", "CSS", "JavaScript", "WebRTC", "Socket.io"],
+    github: "https://github.com/lahori-venkatesh/mockinterview",
+    live: "https://mockwithpeers.vercel.app",
+    featured: true,
+  },
+  {
     title: "Medivars - Doctor Consultation platform for Healthcare Solutions",
     description: "A cutting-edge Doctor Consultation platform connecting patients with healthcare providers through video consultations, messaging, and appointment management, offering features for patients, doctors, and administrators.",
     image: "images/medivars1.png",
     category: "Web",
-    tech: ["React", "Typescript", "Tailwind CSS", "Vite" , " React Router"],
+    tech: ["React", "Typescript", "Tailwind CSS", "Vite", " React Router"],
     github: "https://github.com/lahori-venkatesh/medivars-public",
     live: " https://medivars.netlify.app/",
     featured: true,
@@ -34,31 +44,15 @@ const projects = [
       "Architected responsive platform with code-splitting, lazy loading, caching strategies"
     ]
   },
-  {
-    title: "Pebly – URL Shortener",
-    description: "Developed a custom URL shortener supporting 1,000+ active links with memorable, branded URLs. Implemented QR code generation and file-to-URL conversion for versatile sharing. Built responsive React frontend ensuring smooth experience on desktop and mobile.",
-    image: "images/pebly.png",
-    category: "Web",
-    tech: ["React", "Node.js", "MongoDB", "Express.js", "QR Code API", "Tailwind CSS"],
-    github: "https://github.com/lahori-venkatesh/pebly",
-    live: "https://pebly.com",
-    duration: "Oct 2024 – Dec 2024",
-    achievements: [
-      "Developed full-stack functionality for efficient link management and redirection",
-      "Handling up to 10,000 redirects/day with optimized performance",
-      "Added analytics to track clicks and usage trends",
-      "Improved link performance visibility for users",
-      "Implemented QR code generation for enhanced sharing capabilities"
-    ]
-  },
+
   {
     title: "API Keys Management System",
     description: "Built a secure platform for storing and managing multiple API keys per user. Implemented real-time API usage monitoring and subscription tracking for hundreds of API calls/user. Developed React frontend and Java backend for seamless key management operations.",
-    image: "images/api-management.png",
+    image: "images/apikeypro.png",
     category: "Web",
     tech: ["React", "Java", "Spring Boot", "MongoDB", "JWT", "REST API"],
-    github: "https://github.com/lahori-venkatesh/api-keys-manager",
-    live: "https://api-manager.com",
+    github: "https://github.com/lahori-venkatesh/apikey",
+    live: "https://apikeypro.vercel.app/",
     duration: "Jan 2025 – Mar 2025",
     achievements: [
       "Integrated MongoDB for scalable and secure storage of API keys",
@@ -71,11 +65,11 @@ const projects = [
   {
     title: "Donation Transparency Tracker",
     description: "Created platform for NGOs to upload proof of fund utilization (receipts, images). Built donor dashboards with real-time impact analytics and social recognition ratings. Developed NGO dashboards to track donations, fund allocation, and project progress.",
-    image: "images/donation-tracker.png",
+    image: "images/Donatetrack.png",
     category: "Web",
     tech: ["React", "Node.js", "MongoDB", "Express.js", "Chart.js", "File Upload"],
-    github: "https://github.com/lahori-venkatesh/donation-tracker",
-    live: "https://donation-tracker.com",
+    github: "https://github.com/lahori-venkatesh/Donations-tracking-system",
+    live: "https://donatetrack.vercel.app/",
     duration: "Apr 2025 – Present",
     featured: true,
     achievements: [
@@ -109,7 +103,7 @@ export default function Projects() {
         </motion.div>
 
         {/* Projects Grid */}
-        <motion.div 
+        <motion.div
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           layout
         >
@@ -133,7 +127,7 @@ export default function Projects() {
                     </div>
                   </div>
                 )}
-                
+
                 {/* Single Image Display */}
                 <div className="relative group">
                   <div className="overflow-hidden rounded-t-lg">
@@ -147,18 +141,18 @@ export default function Projects() {
                     <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 </div>
-                
+
                 <CardHeader className="pb-4">
                   <CardTitle className="text-lg leading-tight group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </CardTitle>
                 </CardHeader>
-                
+
                 <CardContent className="flex-1 flex flex-col">
                   <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
                     {project.description}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.tech.map((tech) => (
                       <span
@@ -169,7 +163,7 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
-                  
+
                   <div className="mt-auto space-y-3 sm:space-y-0 sm:flex sm:gap-3">
                     <Button className="w-full sm:w-auto group/btn" asChild>
                       <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">

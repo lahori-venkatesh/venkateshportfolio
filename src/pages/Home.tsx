@@ -29,9 +29,9 @@ export default function Home() {
         </section>
 
         {/* 1.5️⃣ Achievement Cards (Competitive Programming) */}
-        <section id="achievementcards">
+        {/* <section id="achievementcards">
           <AchievementCards />
-        </section>
+        </section> */}
 
         {/* 2️⃣ Skills (Capabilities) */}
         <section id="skillssection">

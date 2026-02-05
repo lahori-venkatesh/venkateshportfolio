@@ -33,13 +33,7 @@ const contactInfo = [
     href: "mailto:lahorivenkatesh709@gmail.com",
     color: "text-blue-500"
   },
-  {
-    icon: Phone,
-    title: "Phone",
-    value: "+91 82928956",
-    href: "tel:+9182928956",
-    color: "text-green-500"
-  },
+
   {
     icon: MapPin,
     title: "Location",
@@ -197,7 +191,7 @@ export default function Contact() {
               <Send className="h-5 w-5 text-primary" />
               Send Message
             </h3>
-            
+
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
@@ -207,9 +201,9 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel>Name</FormLabel>
                       <FormControl>
-                        <Input 
-                          placeholder="Your name" 
-                          {...field} 
+                        <Input
+                          placeholder="Your name"
+                          {...field}
                           className="transition-all duration-300 focus:ring-2 focus:ring-primary/20"
                         />
                       </FormControl>
@@ -217,7 +211,7 @@ export default function Contact() {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="email"
@@ -225,9 +219,9 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel>Email</FormLabel>
                       <FormControl>
-                        <Input 
-                          placeholder="your.email@example.com" 
-                          {...field} 
+                        <Input
+                          placeholder="your.email@example.com"
+                          {...field}
                           className="transition-all duration-300 focus:ring-2 focus:ring-primary/20"
                         />
                       </FormControl>
@@ -235,7 +229,7 @@ export default function Contact() {
                     </FormItem>
                   )}
                 />
-                
+
                 <FormField
                   control={form.control}
                   name="message"
@@ -243,19 +237,19 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel>Message</FormLabel>
                       <FormControl>
-                        <Textarea 
-                          placeholder="Tell me about your project or just say hello!" 
+                        <Textarea
+                          placeholder="Tell me about your project or just say hello!"
                           className="min-h-[120px] transition-all duration-300 focus:ring-2 focus:ring-primary/20"
-                          {...field} 
+                          {...field}
                         />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                
-                <Button 
-                  type="submit" 
+
+                <Button
+                  type="submit"
                   className="w-full group"
                   disabled={form.formState.isSubmitting}
                 >

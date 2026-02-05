@@ -5,11 +5,46 @@ import { Button } from "@/components/ui/button";
 
 const experience = [
   {
+    company: "TinySlash",
+    role: "Software Engineer Intern",
+    duration: "Oct 2025 - Present",
+    location: "Remote",
+    description: "Contributing to a comprehensive URL Shortening & QR Code Platform, focusing on frontend performance, security validation, and user experience enhancements.",
+    projects: [
+      {
+        name: "URL Shortening & QR Code Platform",
+        duration: "Oct 2025 - Present",
+        role: "Software Engineer Intern",
+        liveUrl: "https://tinyslash.com/",
+        description: "Built and optimized the frontend for a dynamic QR code and URL management platform, ensuring high performance, security compliance, and seamless user flows.",
+        responsibilities: [
+          "Built QR code generation and management frontend used for creating dynamic QR codes mapped to platform-controlled short URLs",
+          "Implemented a pre-creation URL pre-check engine on the frontend, validating protocol, domain format, and unsafe patterns",
+          "Integrated frontend with backend validation APIs to deliver real-time URL safety feedback (<300ms response time)",
+          "Improved the QR creation flow and form validation UX, lowering user configuration errors by ~25%",
+          "Optimized frontend logic for high-frequency link generation scenarios, handling 100+ URL requests per session without UI lag",
+          "Collaborated with backend and product teams to align frontend behavior with security and compliance requirements",
+          "Refactored reusable UI components for link creation and QR preview, reducing duplicate frontend code by ~20%"
+        ],
+        achievements: [
+          "Supported 1000+ link creations during internal testing",
+          "Reduced invalid URL creation attempts by ~35% via pre-check engine",
+          "Delivered real-time URL safety feedback with <300ms response time",
+          "Lowered user configuration errors by ~25% during QA and staging tests",
+          "Optimized logic to handle 100+ URL requests per session without UI lag",
+          "Reduced duplicate frontend code by ~20%"
+        ],
+        technologies: ["React.js", "TypeScript", "Java", "Tailwind CSS", "HTML", "CSS", "JavaScript", "GitHub CI/CD", "VS Code"]
+      }
+    ],
+    featured: true
+  },
+  {
     company: "The Social Artist",
-    role: "Full-Stack Developer",
-    duration: "Apr 2025 - Present",
+    role: "Frontend Developer",
+    duration: "Apr 2025 - Sep 2025",
     location: "Jaipur, India",
-    description: "Leading full-stack development projects for marketing solutions and resume building platforms with focus on performance optimization and user experience.",
+    description: "Leading frontend development projects for marketing solutions with focus on performance optimization and user experience.",
     projects: [
       {
         name: "Marketing Agency Website",
@@ -30,28 +65,6 @@ const experience = [
           "Optimized assets for better performance"
         ],
         technologies: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "EmailJS", "Calendly", "GitHub CI/CD", "VS Code"]
-      },
-      {
-        name: "FixItCV - Resume Builder Platform",
-        duration: "Jul 2025 - Present",
-        role: "Full-Stack Developer",
-        liveUrl: "https://fixitcv.com",
-        description: "Leading full-stack development of a dynamic resume builder with real-time previews, customizable templates, and PDF generation capabilities.",
-        responsibilities: [
-          "Developing full-stack application with React frontend and backend integration",
-          "Implementing user authentication and authorization with Clerk",
-          "Building PDF generation functionality using Puppeteer",
-          "Managing database operations and user data with Supabase",
-          "Coordinating development workflow using Git and GitHub"
-        ],
-        achievements: [
-          "Built complete full-stack resume builder platform",
-          "Implemented secure user authentication and data management",
-          "Created high-quality PDF generation with custom templates",
-          "Optimized application performance with modern development tools",
-          "Established efficient development workflow and version control"
-        ],
-        technologies: ["React", "TypeScript", "Vite", "Git", "GitHub", "VS Code", "Supabase", "Clerk Auth", "Puppeteer"]
       }
     ],
     featured: true
@@ -85,9 +98,8 @@ export default function Experience() {
               viewport={{ once: true }}
               className="group"
             >
-              <Card className={`overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-0 shadow-lg ${
-                job.featured ? 'ring-2 ring-primary/20' : ''
-              }`}>
+              <Card className={`overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-0 shadow-lg ${job.featured ? 'ring-2 ring-primary/20' : ''
+                }`}>
                 <CardHeader className="pb-3 md:pb-4 p-4 md:p-6">
                   <div className="flex items-start justify-between">
                     <div className="flex items-start gap-3 md:gap-4 w-full">
@@ -97,7 +109,7 @@ export default function Experience() {
                       <div className="flex-1 min-w-0">
                         <div className="flex items-start flex-col sm:flex-row sm:items-center gap-2 mb-2">
                           <CardTitle className="text-lg md:text-xl leading-tight">{job.role}</CardTitle>
-                          {job.featured && (
+                          {job.featured && job.duration.toLowerCase().includes('present') && (
                             <div className="flex items-center gap-1 bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium flex-shrink-0">
                               <Star className="h-3 w-3" />
                               Current Role
@@ -125,7 +137,7 @@ export default function Experience() {
                     </div>
                   </div>
                 </CardHeader>
-                
+
                 <CardContent className="pt-0 p-4 md:p-6">
                   {/* Projects */}
                   <div className="space-y-6 md:space-y-8">
@@ -139,7 +151,7 @@ export default function Experience() {
                         className="border-l-2 border-primary/20 pl-4 md:pl-6 relative"
                       >
                         <div className="absolute -left-2 top-0 w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full"></div>
-                        
+
                         <div className="mb-3 md:mb-4">
                           <div className="flex items-start flex-col gap-2 mb-2">
                             <h4 className="font-semibold text-base md:text-lg text-foreground leading-tight">{project.name}</h4>
@@ -178,7 +190,7 @@ export default function Experience() {
                             </div>
                             <ul className="space-y-1.5 md:space-y-2">
                               {project.responsibilities.map((item, i) => (
-                                <motion.li 
+                                <motion.li
                                   key={i}
                                   initial={{ opacity: 0, x: -10 }}
                                   whileInView={{ opacity: 1, x: 0 }}
@@ -192,7 +204,7 @@ export default function Experience() {
                               ))}
                             </ul>
                           </div>
-                          
+
                           <div className="mt-4 md:mt-0">
                             <div className="flex items-center gap-2 mb-2 md:mb-3">
                               <Star className="h-3 w-3 md:h-4 md:w-4 text-yellow-500" />
@@ -200,7 +212,7 @@ export default function Experience() {
                             </div>
                             <ul className="space-y-1.5 md:space-y-2">
                               {project.achievements.map((item, i) => (
-                                <motion.li 
+                                <motion.li
                                   key={i}
                                   initial={{ opacity: 0, x: -10 }}
                                   whileInView={{ opacity: 1, x: 0 }}
